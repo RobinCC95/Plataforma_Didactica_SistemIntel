@@ -1,0 +1,21 @@
+<ng-container *ngIf="state">
+  <div class="row">
+    <div class="col s5">
+      Diagram
+      <gojs-diagram #myDiagram [initDiagram]='initDiagram' [nodeDataArray]='state.diagramNodeData'
+        [linkDataArray]='state.diagramLinkData' [divClassName]='diagramDivClassName'
+        [modelData]='state.diagramModelData' (modelChange)='diagramModelChange($event)'>
+      </gojs-diagram>
+    </div>
+    <div class="col s3">
+      Palette
+      <gojs-palette #myPalette [initPalette]='initPalette' [divClassName]='paletteDivClassName'
+        [nodeDataArray]='state.paletteNodeData' [modelData]='state.paletteModelData'></gojs-palette>
+    </div>
+    <div class="col s2">
+      <button class="button" (click)="saveGrafo()">Guardar
+      </button>
+    </div>
+  </div>
+</ng-container>
+

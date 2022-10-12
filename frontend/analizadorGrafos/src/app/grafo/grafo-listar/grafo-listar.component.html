@@ -1,0 +1,99 @@
+<ng-container *ngIf="grafoArray">
+  <div>
+    <table class="responsive-table highlight">
+      <thead>
+        <tr>
+          <div class="row">
+            <div class="col s2">
+              <th>Nombre</th>
+            </div>
+            <div class="col s1">
+              <th>N. Nodos</th>
+            </div>
+            <div class="col s1">
+              <th>N. Aristas </th>
+            </div>
+            <div class="col s2">
+              <th>Tiempo </th>
+            </div>
+            <div class="col s2">
+              <th>Opcion</th>
+            </div>
+            <div class="col s2">
+              <th></th>
+            </div>
+            <div class="col s2">
+              <th></th>
+            </div>
+          </div>
+
+
+
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let grafo of grafoArray">
+          <div class="row">
+            <div class="col s2">
+              <td> {{grafo.name}}</td>
+            </div>
+            <div class="col s1">
+              <td>{{grafo.nodes.length}}</td>
+            </div>
+            <div class="col s1">
+              <td>{{grafo.edges.length}}</td>
+            </div>
+            <div class="col s2">
+              <td> {{grafo.tiempo}}</td>
+            </div>
+
+            <div class="col s2">
+              <td>
+                <a class="waves-effect waves-light btn-small blue" (click)="drawGrafo(grafo._id)"><i
+                    class="material-icons right">image_aspect_ratio</i>Draw</a>
+
+              </td>
+            </div>
+            <div class="col s2">
+              <td>
+                <a class="waves-effect waves-light btn-small red" (click)="analizarGrafo(grafo._id)"><i
+                    class="material-icons right">border_bottom</i>Analyze</a>
+              </td>
+
+            </div>
+            <div class="col s2">
+              <td>
+                <a class="waves-effect waves-light btn-small red" (click)="deleteGrafo(grafo._id)"><i
+                    class="material-icons right">delete_forever</i>Delete</a>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+
+<ng-container>
+  <div class="row">
+    <div class="input-field col s6 m6">
+      <select class="icons" id="tipo-particion">
+        <option value="modular"
+          data-icon="https://opensistemas.com/wp-content/uploads/2020/06/Comunidades-de-grafos.jpg">Modular</option>
+        <option value="aproximado"
+          data-icon="http://3.bp.blogspot.com/-1LQLWi1JfAc/VwP6I4CG1OI/AAAAAAAAAEI/v5zuEPj5oI8TDO6SG9UnQvmCxO0ZBg7dw/s1600-r/5454545454545.jpg">
+          Aproximado</option>
+        <option value="voraz"
+          data-icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZDIgX1jzwcCexOMH-ViVD1PALio6V5qmO_WKLDZfAWg1ip-wH2KFZROSItKIkj2lBO4g&usqp=CAU">
+          Voraz</option>
+        <option value="dinamico"
+          data-icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWLRkEQi5DRV7grgv1r6qLy-QN-QsXkGbkUw&usqp=CAU">
+          Dinamico</option>
+      </select>
+      <label>Seleccione tipo de particion</label>
+    </div>
+  </div>
+
+</ng-container>
