@@ -25,7 +25,7 @@ Ubicarse en la carpeta raiz, ingrese en las subcarpetas en la siguiente direccio
 	- python -m venv env
 
 - Active el ambiente virtual con la siguiente linea. Debe estar en la subcarpeta mencionada al inicio de la instalacion:
-	- venv/Scripts/activate
+	- env/Scripts/activate.bat
 - Instale las librerias en el ambiente virtual: 
 	- pip install -r requirements.txt
 

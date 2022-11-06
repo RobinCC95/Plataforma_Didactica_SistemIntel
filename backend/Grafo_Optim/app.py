@@ -53,6 +53,7 @@ def analizar_grafo():
         if grafo != None:
             analisis = Analisis_Algoritmo(grafo, particion)
             grafo_particion = analisis.get_grafo_particion()
+            print("si llego")
             id = mongo.db.grafo_particion.insert_one(grafo_particion)
             return jsonify({'transaccion': True, "data":str(id)})
         return jsonify({'transaccion': False, "data":"No se ha podido procesar su solicitud"})
