@@ -6,7 +6,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_cors import CORS, cross_origin
 
-from analisis.analisis_algoritmo import *
+# from analisis.analisis_algoritmo import *
+from sistemas_inteligentes.options_grafo import *
 
 #manejo de errores al traer la informacion
 class JSONEncoder(json.JSONEncoder):
@@ -47,14 +48,17 @@ def after_request(response):
 def analizar_grafo():
     if request.method == 'POST':
         #TODO: analizar grafo, guardar en MongoDB y retornar el nombre del grafo
-        particion = request.json['particion']
+        option = request.json['particion']
         #String
         grafo = request.json['grafo']  # diccionario
         if grafo != None:
-            analisis = Analisis_Algoritmo(grafo, particion)
-            grafo_particion = analisis.get_grafo_particion()
-            print("si llego")
-            id = mongo.db.grafo_particion.insert_one(grafo_particion)
+            # analisis = Analisis_Algoritmo(grafo, option)
+            # grafo_particion = analisis.get_grafo_particion()
+            #print("si llego")
+            option_grafo = Options_Grafo(grafo, option)
+            grafo_transform = option_grafo.get_grafo_transform()
+            #id = mongo.db.grafo_particion.insert_one(grafo_particion)
+            id = grafo_transform #TODO: colocar id de grafo transformado y editado 
             return jsonify({'transaccion': True, "data":str(id)})
         return jsonify({'transaccion': False, "data":"No se ha podido procesar su solicitud"})
 
