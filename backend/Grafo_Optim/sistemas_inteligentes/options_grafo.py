@@ -13,9 +13,13 @@ class Options_Grafo:
          #mat = graph_mapper.graph_to_adjacencies_mat(self.grafo)
          #TODO: quitar la linea siguiente y descomentar el else
         self.grafo_transform = "grafo transformado"
-        if option == "find_profund":
+        if option == "find_profundidad":
             pass
         elif option == "find_anchura":
+            pass
+        elif option == "a-estrella":
+            pass
+        elif option == "poda-a-b":
             pass
         else:
             pass
