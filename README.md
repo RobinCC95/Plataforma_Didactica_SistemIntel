@@ -1,4 +1,4 @@
-# analizador_grafos
+# Plataforma didactica de sistemas inteligentes
 Proyecto API-REST con frontend en [angular](https://angular.io/ "angular")  y backend en [mongoDB-atlas](https://www.mongodb.com/ "mongoDB-atlas") con un servidor [flask](https://flask.palletsprojects.com/en/2.1.x/ "flask") programado en python. Se hace uso de una libreria de [gojs](https://gojs.net/latest/index.html "gojs") para la graficacion de   los grafos.
 El analizador de los grafos se realiza en python con su estructura principal. Como primera parte descargue el repositorio y descomprimalo o puede clonarlo.
 Los algoritmos presentes para los grafo son los siguientes
