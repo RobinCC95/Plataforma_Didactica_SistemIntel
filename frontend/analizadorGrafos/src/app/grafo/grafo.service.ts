@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GrafoModel } from '../modelos/grafoModel';
 import { DataAnalisis } from '../modelos/dataAnalisis';
+import { ParametrosEjercicioDTO } from '../modelos/parametros.ejercicio.dto';
 @Injectable({
   providedIn: 'root'
 })
@@ -46,7 +47,7 @@ export class GrafoService {
     return this.http.put(`${this.BASE_URL}update-grafo`, grafo);
   }
 
-  analizarGrafo(dataAnali : DataAnalisis): Observable<any> {
+  analizarGrafo(dataAnali : ParametrosEjercicioDTO): Observable<any> {
     return this.http.post(`${this.BASE_URL}analizar-grafo`, dataAnali);
   }
 }
