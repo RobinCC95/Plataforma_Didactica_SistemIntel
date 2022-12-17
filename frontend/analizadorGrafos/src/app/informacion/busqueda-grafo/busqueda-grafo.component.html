@@ -2,64 +2,35 @@
 <hr />
 <form (ngSubmit)="agregarProyecto()" [formGroup]="miFormulario" class="form-group container">
   <div>
-    <label for="solucion"> solucion</label>
-    <input
-      class="form-control"
-      type="text"
-      name="solucion"
-      placeholder="Nombre de la solucion"
-      formControlName="solucion"
-    />
+    <label for="solucion"> solucion: REINAS - PUZZLE - RUMANIA</label>
+    <input class="form-control" type="text" name="solucion" placeholder="Nombre de la solucion"
+      formControlName="solucion" />
     <p>{{ miFormulario.controls["solucion"].value }}</p>
   </div>
   <div>
-    <label for="algoritmo"> algoritmo</label>
-    <input
-      class="form-control"
-      type="text"
-      formControlName="algoritmo"
-      placeholder="Selecciona el algoritmo"
-    />
+    <label for="algoritmo"> algoritmo: PRIMERO ANCHURA - PRIMERO PROFUNDIDAD - COSTE UNIFORME - NUMERO PASOS - A ASTERISCO - RECURSIVA</label>
+    <input class="form-control" type="text" formControlName="algoritmo" placeholder="Selecciona el algoritmo" />
   </div>
 
-  <div *ngIf="miFormulario.controls["solucion"].value !== 'PUZZLE'">
-    <label  for="datoUno"> datoUno</label>
-    <input
-      class="form-control"
-      type="text"
-      formControlName="datoUno"
-      placeholder="Selecciona el dato 1"
-    />
+  <div >
+    <label  for=" datoUno"> datoUno</label>
+    <input class="form-control" type="text" formControlName="datoUno" placeholder="Selecciona el dato 1" />
   </div>
 
   <div>
-    <label *ngIf="miFormulario.controls["solucion"].value === 'RUMANIA'" for="datoDos"> datoDos</label>
-    <input
-      class="form-control"
-      type="text"
-      formControlName="datoDos"
-      placeholder="Selecciona el dato 2"
-    />
+    <label  for=" datoDos"> datoDos</label>
+    <input class="form-control" type="text" formControlName="datoDos" placeholder="Selecciona el dato 2" />
   </div>
 
-  <div *ngIf="miFormulario.controls["solucion"].value === 'PUZZLE'">
-    <label for="tecnologiaR">Lista</label>
+  <div >
+    <label for=" tecnologiaR">Lista</label>
     <div class="row">
       <div class="col-12 col-md-8">
-        <input
-          class="form-control"
-          type="text"
-          [formControl]="tecnologia"
-          placeholder="Nombre del proyecto"
-        />
+        <input class="form-control" type="text" [formControl]="tecnologia" placeholder="Nombre del proyecto" />
       </div>
       <div class="col-12 col-md-4">
         <!-- type="button" para que no recargue el form -->
-        <button
-          (click)="agregarTecnologia()"
-          type="button"
-          class="btn btn-success"
-        >
+        <button (click)="agregarTecnologia()" type="button" class="btn btn-success">
           Agregar POSICIONES
         </button>
       </div>

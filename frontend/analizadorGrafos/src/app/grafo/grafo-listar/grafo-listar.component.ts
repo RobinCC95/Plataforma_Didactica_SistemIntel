@@ -78,12 +78,12 @@ export class GrafoListarComponent implements OnInit {
       particion: tipParticion
     }
     //console.log(dataPart);
-    this.grafoService.analizarGrafo(dataPart).subscribe(
-      data => {
-        console.log(data);
-      },
-      error => console.log(error)
-    );
+    // this.grafoService.analizarGrafo(dataPart).subscribe(
+    //   data => {
+    //     console.log(data);
+    //   },
+    //   error => console.log(error)
+    // );
     //TODO: Hacer retardo y validacion para ir a la pagina editar
     this.router.navigate(['/grafo-analizar']);
   }

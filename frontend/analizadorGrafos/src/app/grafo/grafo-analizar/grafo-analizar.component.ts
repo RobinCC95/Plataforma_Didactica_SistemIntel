@@ -48,11 +48,11 @@ export class GrafoAnalizarComponent implements OnInit {
     event.preventDefault();
     if(this.formAnalisis.valid){
       // TODO: Peticion al servidor del analisis de grafo
-    this.grafoService.analizarGrafo(dataAnali).subscribe(
-        (data: any) => {
-          console.log(data);
-        });
-        console.log(dataAnali);
+    // this.grafoService.analizarGrafo(dataAnali).subscribe(
+    //     (data: any) => {
+    //       console.log(data);
+    //     });
+    //     console.log(dataAnali);
 
     }
     else{

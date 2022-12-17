@@ -13,6 +13,7 @@ import { BusquedaGrafoComponent } from './informacion/busqueda-grafo/busqueda-gr
 import { JuegoGrafoComponent } from './informacion/juego-grafo/juego-grafo.component';
 import { SistemasInteligentesComponent } from './informacion/sistemas-inteligentes/sistemas-inteligentes.component';
 import { AyudaComponent } from './template/ayuda/ayuda.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AyudaComponent } from './template/ayuda/ayuda.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports:[
     BusquedaGrafoComponent,

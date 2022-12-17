@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ProblemaEnum } from 'src/app/enums/problema.enum';
 import { GrafoService } from 'src/app/grafo/grafo.service';
 import { ParametrosEjercicioDTO } from 'src/app/modelos/parametros.ejercicio.dto';
+import { Router } from '@angular/router';
 import {
   FormArray,
   FormBuilder,
@@ -18,7 +19,7 @@ import {
 })
 export class BusquedaGrafoComponent implements OnInit {
 
-  constructor(private grafoService : GrafoService, private fb: FormBuilder) { }
+  constructor(private grafoService : GrafoService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -66,27 +67,28 @@ export class BusquedaGrafoComponent implements OnInit {
       return;
     }
     let param : ParametrosEjercicioDTO = new ParametrosEjercicioDTO()
-    param.problema = this.miFormulario.get('problema').value
-    param.algoritmo = this.miFormulario.get('algoritmo').value
+    param.problema = this.miFormulario.get('solucion')!.value
+    param.algoritmo = this.miFormulario.get('algoritmo')!.value
     param.requerimientos = {}
     switch(param.problema){
       case ProblemaEnum.PUZZLE:
-        param.requerimientos['lista'] = this.tecnologias()
+        param.requerimientos['lista'] = this.tecnologias
         break;
       case ProblemaEnum.RUMANIA:
-        param.requerimientos['ubicacion_inicial'] = this.miFormulario.get('datoUno').value
-        param.requerimientos['ubicacion_final'] = this.miFormulario.get('datoDos').value
+        param.requerimientos['ubicacion_inicial'] = this.miFormulario.get('datoUno')!.value
+        param.requerimientos['ubicacion_final'] = this.miFormulario.get('datoDos')!.value
         break;
       case ProblemaEnum.REINAS:
-        param.requerimientos['tamano_n'] = this.miFormulario.get('datoUno').value
+        param.requerimientos['tamano_n'] = this.miFormulario.get('datoUno')!.value
         break;
     }
     this.grafoService.analizarGrafo(param).subscribe(data => {
       console.log(data);
-      
     })
     this.miFormulario.reset()
     this.tecnologias.clear()
+    this.router.navigate(['/grafo-analizar']);
+
   }
 
 }
