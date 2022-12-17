@@ -48,10 +48,11 @@ def after_request(response):
 def analizar_grafo():
     if request.method == 'POST':
         #TODO: analizar grafo, guardar en MongoDB y retornar el nombre del grafo
-        option = request.json['particion']
+        problema = request.json['problema']
         #String
-        grafo = request.json['grafo']  # diccionario
-        if grafo != None:
+        algoritmo = request.json['algoritmo']  # diccionario
+        requerimiento = request.json['requerimientos']
+        if problema != None:
             # analisis = Analisis_Algoritmo(grafo, option)
             # grafo_particion = analisis.get_grafo_particion()
             #print("si llego")
