@@ -1,6 +1,10 @@
 from shutil import get_archive_formats
 import time
 from sistemas_inteligentes import graph_mapper
+
+from analisis import algorithms
+
+
 class Options_Grafo:
     def __init__(self, grafo, option) -> None:
         self.grafo = grafo

@@ -46,3 +46,5 @@ Toda la parte grafica de la aplicacion desarrollada en angular que consume los r
 
 ![](https://scontent.feoh4-3.fna.fbcdn.net/v/t39.30808-6/281501904_5314154845311881_5209382441929272854_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeFdbdOcEC0QZwRyfyp_oCPPg--1WZ6Q-fGD77VZnpD58Yi1YZ65eyidXMWDbvtIexZ0G8ZAYU5K0MB3NgqT2Snu&_nc_ohc=NyVRbh6np7oAX8V30uV&_nc_oc=AQk5QJiyH0Jqnf2DYoPfKa2kijNW13K4OWWE5U6twNsG19mv--W43yJS4C_PEkfO3ms&_nc_ht=scontent.feoh4-3.fna&oh=00_AT-i_RbauRn_38Gg9KCIahlt6eC5Y6_s-lWi_sm--4exOw&oe=62AE65C6)
 
+
+parte de repositorio aima
